@@ -1,0 +1,2 @@
+# Copia este archivo como .dev.vars (no se sube a git) y pon tu API key de cloudFleet.
+CLOUDFLEET_API_KEY=

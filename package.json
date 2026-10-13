@@ -1,0 +1,16 @@
+{
+  "name": "dashboard-flota",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard de flota (cloudFleet) servido por un Cloudflare Worker",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "probar": "node scripts/probar-agregados.mjs",
+    "demo": "node scripts/generar-demo.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.150.0"
+  }
+}

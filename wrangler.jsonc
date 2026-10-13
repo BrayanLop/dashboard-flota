@@ -1,0 +1,38 @@
+{
+  // Configuración del Worker del dashboard de flota.
+  // Documentación: https://developers.cloudflare.com/workers/wrangler/configuration/
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dashboard-flota",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+
+  // Archivos estáticos (dashboard). Las rutas /api/* las atiende el Worker.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+
+  // Caché de resúmenes (TTL 30 min). Crea el namespace con:
+  //   npx wrangler kv namespace create CACHE
+  // y reemplaza el id de abajo por el que te devuelva el comando.
+  // Si el binding no existe, el Worker funciona igual, pero sin caché.
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "REEMPLAZAR_CON_ID_DEL_NAMESPACE_KV"
+    }
+  ],
+
+  // Parámetros no secretos (opcionales). La API key va como secreto:
+  //   npx wrangler secret put CLOUDFLEET_API_KEY
+  "vars": {
+    // Tope de peticiones a cloudFleet por refresco (plan gratuito de Workers: 50 subrequests).
+    "MAX_SUBREQUESTS": "45",
+    // Tope total de espera (segundos) por rate limit de cloudFleet en un refresco.
+    "MAX_ESPERA_SEG": "60"
+  },
+
+  "observability": { "enabled": true }
+}

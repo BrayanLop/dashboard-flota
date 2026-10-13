@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard de flota</title>
+  <meta name="description" content="Estado de flota, mantenimientos, combustible y costos desde cloudFleet">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado-int">
+      <div class="marca">
+        <h1>Dashboard de flota</h1>
+        <span class="periodo" id="texto-periodo"></span>
+        <span class="insignia-demo oculto" id="insignia-demo">Modo demo · datos ficticios</span>
+      </div>
+      <div class="controles">
+        <div class="segmentado" role="group" aria-label="Periodo">
+          <button type="button" data-meses="1" aria-pressed="false">1 mes</button>
+          <button type="button" data-meses="3" aria-pressed="false">3 meses</button>
+          <button type="button" data-meses="6" aria-pressed="true">6 meses</button>
+        </div>
+        <button type="button" class="boton primario" id="btn-actualizar">Actualizar ahora</button>
+        <span class="frescura" id="frescura" aria-live="polite"></span>
+        <button type="button" class="boton boton-icono" id="btn-tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="principal">
+    <div id="avisos" aria-live="polite"></div>
+
+    <div id="estado-carga" class="panel-estado">
+      <div class="girador" aria-hidden="true"></div>
+      <h2>Cargando datos de cloudFleet…</h2>
+      <p>La primera carga puede tardar hasta 1–2 minutos: cloudFleet permite 30 peticiones por minuto.</p>
+    </div>
+
+    <div id="estado-error" class="panel-estado oculto" role="alert">
+      <h2>No se pudieron cargar los datos</h2>
+      <p id="texto-error"></p>
+      <button type="button" class="boton" id="btn-reintentar">Reintentar</button>
+    </div>
+
+    <div id="contenido" class="contenido oculto">
+      <section class="kpis" id="kpis" aria-label="Indicadores principales"></section>
+
+      <section class="seccion" aria-labelledby="t-flota">
+        <h2 id="t-flota">Estado de flota</h2>
+        <div class="rejilla">
+          <article class="tarjeta" data-grafica="vehiculosTipo">
+            <h3>Vehículos por tipo</h3><p class="sub">Total de la flota registrada</p>
+          </article>
+          <article class="tarjeta" data-grafica="disponibilidad">
+            <h3>Disponibilidad más baja</h3><p class="sub">10 vehículos con menor % en el periodo</p>
+          </article>
+          <article class="tarjeta" data-grafica="documentosTipo">
+            <h3>Documentos por tipo</h3><p class="sub">Vencidos y por vencer en 30 días</p>
+          </article>
+          <article class="tarjeta completa" data-tabla="documentos">
+            <h3>Documentos vencidos y por vencer <span class="contador" data-contador></span></h3>
+            <p class="sub">Ordenados por urgencia</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-mant">
+        <h2 id="t-mant">Mantenimientos</h2>
+        <div class="rejilla">
+          <article class="tarjeta" data-grafica="costoMantenimiento">
+            <h3>Costo de mantenimiento por mes</h3><p class="sub">Mano de obra y repuestos · sin OTs anuladas</p>
+          </article>
+          <article class="tarjeta" data-grafica="otsEstado">
+            <h3>Órdenes de trabajo por estado</h3><p class="sub">OTs iniciadas en el periodo</p>
+          </article>
+          <article class="tarjeta" data-grafica="novedades">
+            <h3>Novedades pendientes</h3><p class="sub">Por prioridad</p>
+          </article>
+          <article class="tarjeta completa" data-tabla="otsAbiertas">
+            <h3>OTs abiertas <span class="contador" data-contador></span></h3>
+            <p class="sub">Abiertas o en cierre técnico, de la más antigua a la más reciente</p>
+          </article>
+          <article class="tarjeta completa" data-tabla="programaciones">
+            <h3>Programaciones de mantenimiento <span class="contador" data-contador></span></h3>
+            <div class="mini" id="mini-programaciones"></div>
+            <p class="sub">Vencidas y próximas (30 días)</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-comb">
+        <h2 id="t-comb">Combustible</h2>
+        <div class="mini" id="mini-combustible"></div>
+        <div class="rejilla">
+          <article class="tarjeta" data-grafica="galonesMes">
+            <h3>Galones por mes</h3><p class="sub">Según fecha de tanqueo</p>
+          </article>
+          <article class="tarjeta" data-grafica="costoCombustibleMes">
+            <h3>Costo de combustible por mes</h3><p class="sub">COP</p>
+          </article>
+          <article class="tarjeta" data-grafica="rendimientoTipo">
+            <h3>Rendimiento real vs ideal</h3><p class="sub">Distancia por galón, por tipo de vehículo</p>
+          </article>
+          <article class="tarjeta completa" data-tabla="peoresRendimientos">
+            <h3>Peor rendimiento relativo <span class="contador" data-contador></span></h3>
+            <p class="sub" id="sub-rendimiento">Real / ideal</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-costos">
+        <h2 id="t-costos">Costos</h2>
+        <div class="rejilla">
+          <article class="tarjeta ancha" data-grafica="costoTotalMes">
+            <h3>Costo total por mes</h3><p class="sub">Mantenimiento + combustible</p>
+          </article>
+          <article class="tarjeta ancha" data-grafica="costoCentro">
+            <h3>Costo por centro de costo</h3><p class="sub">Mantenimiento + combustible en el periodo</p>
+          </article>
+          <article class="tarjeta completa" data-tabla="costoVehiculo">
+            <h3>Vehículos con mayor costo</h3>
+            <p class="sub">Top 10 · costo por km cuando hay distancia registrada en combustible</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="pie">Datos: cloudFleet · servidos por un Cloudflare Worker (la API key nunca llega al navegador).</footer>
+</body>
+</html>

@@ -1,0 +1,1248 @@
+{
+ "generadoEn": "2026-10-13T15:00:00.000Z",
+ "desde": "2026-04-14T05:00:00.000Z",
+ "hasta": "2026-10-13T15:00:00.000Z",
+ "meses": 6,
+ "desdeCache": false,
+ "parcial": false,
+ "avisos": [
+  "Datos de ejemplo ficticios (modo demo)."
+ ],
+ "kpis": {
+  "vehiculos": 36,
+  "disponibilidadPromedio": 94.8,
+  "documentosVencidos": 15,
+  "documentosPorVencer": 11,
+  "otsAbiertas": 14,
+  "programacionesVencidas": 20,
+  "novedadesPendientes": 23,
+  "costoTotal": 898783660,
+  "galones": 49337.5,
+  "costoPorKm": 2187.3
+ },
+ "flota": {
+  "total": 36,
+  "porTipo": [
+   {
+    "tipo": "Camión sencillo",
+    "cantidad": 11
+   },
+   {
+    "tipo": "Camioneta",
+    "cantidad": 9
+   },
+   {
+    "tipo": "Tractocamion",
+    "cantidad": 9
+   },
+   {
+    "tipo": "Volqueta",
+    "cantidad": 6
+   },
+   {
+    "tipo": "Sin tipo",
+    "cantidad": 1
+   }
+  ],
+  "disponibilidad": {
+   "promedio": 94.8,
+   "vehiculosMedidos": 35,
+   "peores": [
+    {
+     "codigo": "KDV331",
+     "tipo": "Tractocamion",
+     "disponibilidad": 72.8,
+     "horasMantenimiento": 245
+    },
+    {
+     "codigo": "ZAP226",
+     "tipo": "Camión sencillo",
+     "disponibilidad": 77.2,
+     "horasMantenimiento": 219.7
+    },
+    {
+     "codigo": "VZU310",
+     "tipo": "Tractocamion",
+     "disponibilidad": 78,
+     "horasMantenimiento": 220.5
+    },
+    {
+     "codigo": "PJT345",
+     "tipo": "Camión sencillo",
+     "disponibilidad": 83.5,
+     "horasMantenimiento": 178.9
+    },
+    {
+     "codigo": "XZW107",
+     "tipo": "Camión sencillo",
+     "disponibilidad": 84.7,
+     "horasMantenimiento": 140.9
+    },
+    {
+     "codigo": "FJK205",
+     "tipo": "Camioneta",
+     "disponibilidad": 86.6,
+     "horasMantenimiento": 119.8
+    },
+    {
+     "codigo": "VZV184",
+     "tipo": "Tractocamion",
+     "disponibilidad": 91.3,
+     "horasMantenimiento": 72.7
+    },
+    {
+     "codigo": "WWS128",
+     "tipo": "Tractocamion",
+     "disponibilidad": 92.1,
+     "horasMantenimiento": 69.6
+    },
+    {
+     "codigo": "SPC303",
+     "tipo": "Camión sencillo",
+     "disponibilidad": 95,
+     "horasMantenimiento": 45.4
+    },
+    {
+     "codigo": "ZKK338",
+     "tipo": "Tractocamion",
+     "disponibilidad": 95.2,
+     "horasMantenimiento": 29.7
+    }
+   ]
+  },
+  "documentos": {
+   "vencidos": 15,
+   "porVencer": 11,
+   "porTipo": [
+    {
+     "tipo": "Revisión técnico-mecánica",
+     "vencidos": 3,
+     "porVencer": 5
+    },
+    {
+     "tipo": "Póliza todo riesgo",
+     "vencidos": 5,
+     "porVencer": 2
+    },
+    {
+     "tipo": "SOAT",
+     "vencidos": 3,
+     "porVencer": 3
+    },
+    {
+     "tipo": "Tarjeta de operación",
+     "vencidos": 4,
+     "porVencer": 1
+    }
+   ],
+   "alertas": [
+    {
+     "vehiculo": "XZW107",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-09-01",
+     "dias": -42,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "ALB296",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-09-03",
+     "dias": -40,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "AKP254",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-09-07",
+     "dias": -36,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "ZLC135",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-09-15",
+     "dias": -28,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "YEH191",
+     "documento": "Tarjeta de operación",
+     "venceEl": "2026-09-19",
+     "dias": -24,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "NKZ261",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-09-20",
+     "dias": -23,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "UAY247",
+     "documento": "SOAT",
+     "venceEl": "2026-09-20",
+     "dias": -23,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "ZZR240",
+     "documento": "SOAT",
+     "venceEl": "2026-09-23",
+     "dias": -20,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "JLF198",
+     "documento": "Tarjeta de operación",
+     "venceEl": "2026-09-24",
+     "dias": -19,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "PJT345",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-09-25",
+     "dias": -18,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "NRZ177",
+     "documento": "Tarjeta de operación",
+     "venceEl": "2026-09-27",
+     "dias": -16,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "YEH191",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-09-29",
+     "dias": -14,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "ZKK338",
+     "documento": "Tarjeta de operación",
+     "venceEl": "2026-10-05",
+     "dias": -8,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "AKP254",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-10-07",
+     "dias": -6,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "FJK205",
+     "documento": "SOAT",
+     "venceEl": "2026-10-10",
+     "dias": -3,
+     "estado": "vencido"
+    },
+    {
+     "vehiculo": "ZCY156",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-10-16",
+     "dias": 3,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "DYY114",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-10-20",
+     "dias": 7,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "FCH275",
+     "documento": "SOAT",
+     "venceEl": "2026-10-23",
+     "dias": 10,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "CPF100",
+     "documento": "SOAT",
+     "venceEl": "2026-10-25",
+     "dias": 12,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "WWS128",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-10-25",
+     "dias": 12,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "UAY247",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-10-27",
+     "dias": 14,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "CPF100",
+     "documento": "Tarjeta de operación",
+     "venceEl": "2026-10-29",
+     "dias": 16,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "YAF212",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-11-01",
+     "dias": 19,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "ULV324",
+     "documento": "SOAT",
+     "venceEl": "2026-11-04",
+     "dias": 22,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "WCS317",
+     "documento": "Póliza todo riesgo",
+     "venceEl": "2026-11-06",
+     "dias": 24,
+     "estado": "porVencer"
+    },
+    {
+     "vehiculo": "VJE142",
+     "documento": "Revisión técnico-mecánica",
+     "venceEl": "2026-11-09",
+     "dias": 27,
+     "estado": "porVencer"
+    }
+   ]
+  }
+ },
+ "mantenimiento": {
+  "totalOts": 180,
+  "otsPorEstado": [
+   {
+    "estado": "opened",
+    "etiqueta": "Abierta",
+    "cantidad": 3
+   },
+   {
+    "estado": "onTechnicalCompletion",
+    "etiqueta": "Cierre técnico",
+    "cantidad": 11
+   },
+   {
+    "estado": "closed",
+    "etiqueta": "Cerrada",
+    "cantidad": 139
+   },
+   {
+    "estado": "voided",
+    "etiqueta": "Anulada",
+    "cantidad": 27
+   }
+  ],
+  "otsAbiertas": {
+   "total": 14,
+   "lista": [
+    {
+     "numero": 4157,
+     "vehiculo": "YAF212",
+     "estado": "Cierre técnico",
+     "tipo": "Preventivo",
+     "inicio": "2026-06-07",
+     "diasAbierta": 128,
+     "costo": 2574514
+    },
+    {
+     "numero": 4176,
+     "vehiculo": "NKZ261",
+     "estado": "Cierre técnico",
+     "tipo": "Correctivo",
+     "inicio": "2026-06-26",
+     "diasAbierta": 109,
+     "costo": 2251903
+    },
+    {
+     "numero": 4177,
+     "vehiculo": "YEX149",
+     "estado": "Cierre técnico",
+     "tipo": "Sin tipo",
+     "inicio": "2026-06-26",
+     "diasAbierta": 109,
+     "costo": 1814340
+    },
+    {
+     "numero": 4186,
+     "vehiculo": "NRZ177",
+     "estado": "Cierre técnico",
+     "tipo": "Preventivo",
+     "inicio": "2026-07-05",
+     "diasAbierta": 100,
+     "costo": 716010
+    },
+    {
+     "numero": 4193,
+     "vehiculo": "ALB296",
+     "estado": "Cierre técnico",
+     "tipo": "Correctivo",
+     "inicio": "2026-07-12",
+     "diasAbierta": 93,
+     "costo": 1458214
+    },
+    {
+     "numero": 4247,
+     "vehiculo": "FCH275",
+     "estado": "Abierta",
+     "tipo": "Sin tipo",
+     "inicio": "2026-09-09",
+     "diasAbierta": 34,
+     "costo": 2915028
+    },
+    {
+     "numero": 4252,
+     "vehiculo": "PJT345",
+     "estado": "Cierre técnico",
+     "tipo": "Preventivo",
+     "inicio": "2026-09-12",
+     "diasAbierta": 31,
+     "costo": 1650722
+    },
+    {
+     "numero": 4258,
+     "vehiculo": "YEH191",
+     "estado": "Cierre técnico",
+     "tipo": "Correctivo",
+     "inicio": "2026-09-20",
+     "diasAbierta": 23,
+     "costo": 1967249
+    },
+    {
+     "numero": 4261,
+     "vehiculo": "YXN268",
+     "estado": "Cierre técnico",
+     "tipo": "Sin tipo",
+     "inicio": "2026-09-25",
+     "diasAbierta": 18,
+     "costo": 110047
+    },
+    {
+     "numero": 4268,
+     "vehiculo": "WCS317",
+     "estado": "Cierre técnico",
+     "tipo": "Correctivo",
+     "inicio": "2026-10-04",
+     "diasAbierta": 9,
+     "costo": 2979848
+    },
+    {
+     "numero": 4269,
+     "vehiculo": "ULV324",
+     "estado": "Cierre técnico",
+     "tipo": "Sin tipo",
+     "inicio": "2026-10-04",
+     "diasAbierta": 9,
+     "costo": 1655677
+    },
+    {
+     "numero": 4275,
+     "vehiculo": "WCS317",
+     "estado": "Abierta",
+     "tipo": "Sin tipo",
+     "inicio": "2026-10-11",
+     "diasAbierta": 2,
+     "costo": 5240324
+    },
+    {
+     "numero": 4276,
+     "vehiculo": "YVD121",
+     "estado": "Abierta",
+     "tipo": "Sin tipo",
+     "inicio": "2026-10-11",
+     "diasAbierta": 2,
+     "costo": 903906
+    },
+    {
+     "numero": 4278,
+     "vehiculo": "KDV331",
+     "estado": "Cierre técnico",
+     "tipo": "Sin tipo",
+     "inicio": "2026-10-12",
+     "diasAbierta": 1,
+     "costo": 476520
+    }
+   ]
+  },
+  "costoPorMes": [
+   {
+    "mes": "2026-04",
+    "manoObra": 6837010,
+    "repuestos": 18235117
+   },
+   {
+    "mes": "2026-05",
+    "manoObra": 23792350,
+    "repuestos": 49166509
+   },
+   {
+    "mes": "2026-06",
+    "manoObra": 15276525,
+    "repuestos": 43268115
+   },
+   {
+    "mes": "2026-07",
+    "manoObra": 21708163,
+    "repuestos": 36192205
+   },
+   {
+    "mes": "2026-08",
+    "manoObra": 16914630,
+    "repuestos": 40320984
+   },
+   {
+    "mes": "2026-09",
+    "manoObra": 17752181,
+    "repuestos": 51479335
+   },
+   {
+    "mes": "2026-10",
+    "manoObra": 8650574,
+    "repuestos": 16213392
+   }
+  ],
+  "programaciones": {
+   "ejecutadas": 104,
+   "ejecutadasATiempo": 83,
+   "cumplimiento": 79.8,
+   "vencidas": 20,
+   "proximas": 20,
+   "alertas": [
+    {
+     "vehiculo": "YEH191",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-05-17",
+     "dias": -149,
+     "kmRestantes": -2241,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "ULV324",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-05-19",
+     "dias": -147,
+     "kmRestantes": 2254,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "SPC303",
+     "tarea": "Engrase general",
+     "fecha": "2026-06-07",
+     "dias": -128,
+     "kmRestantes": -1380,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "WWS128",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-06-11",
+     "dias": -124,
+     "kmRestantes": 1099,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "PJT345",
+     "tarea": "Engrase general",
+     "fecha": "2026-06-13",
+     "dias": -122,
+     "kmRestantes": 2669,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "VJE142",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-06-15",
+     "dias": -120,
+     "kmRestantes": -1940,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "VHN219",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-07-01",
+     "dias": -104,
+     "kmRestantes": 894,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "WCS317",
+     "tarea": "Revisión de frenos",
+     "fecha": "2026-07-23",
+     "dias": -82,
+     "kmRestantes": 158,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "ZCY156",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-07-24",
+     "dias": -81,
+     "kmRestantes": -1600,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "ZLC135",
+     "tarea": "Engrase general",
+     "fecha": "2026-07-31",
+     "dias": -74,
+     "kmRestantes": -1113,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "ZZR240",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-08-22",
+     "dias": -52,
+     "kmRestantes": 917,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "YAF212",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-08-28",
+     "dias": -46,
+     "kmRestantes": 6,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "JLF198",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-09-01",
+     "dias": -42,
+     "kmRestantes": -1838,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "AKP254",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-09-01",
+     "dias": -42,
+     "kmRestantes": 2014,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "CPF100",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-09-02",
+     "dias": -41,
+     "kmRestantes": -342,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "UAY247",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-09-02",
+     "dias": -41,
+     "kmRestantes": -2196,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "FCH275",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-09-15",
+     "dias": -28,
+     "kmRestantes": 2351,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "NRZ177",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-09-20",
+     "dias": -23,
+     "kmRestantes": 67,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "YVD121",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-09-23",
+     "dias": -20,
+     "kmRestantes": 1968,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "WWS128",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-10",
+     "dias": -3,
+     "kmRestantes": 2684,
+     "estado": "vencida",
+     "estadoTexto": "Vencida"
+    },
+    {
+     "vehiculo": "VJE142",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-10-14",
+     "dias": 1,
+     "kmRestantes": -2858,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "SPC303",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-17",
+     "dias": 4,
+     "kmRestantes": -2248,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "ZKK338",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-18",
+     "dias": 5,
+     "kmRestantes": 1050,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "SKJ282",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-10-19",
+     "dias": 6,
+     "kmRestantes": -2162,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "XZW107",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-21",
+     "dias": 8,
+     "kmRestantes": 1512,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "XZW107",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-23",
+     "dias": 10,
+     "kmRestantes": -513,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "NRZ177",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-10-23",
+     "dias": 10,
+     "kmRestantes": 2051,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "KDV331",
+     "tarea": "Revisión de frenos",
+     "fecha": "2026-10-23",
+     "dias": 10,
+     "kmRestantes": -2834,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "YEH191",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-10-24",
+     "dias": 11,
+     "kmRestantes": -2105,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "YVD121",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-10-30",
+     "dias": 17,
+     "kmRestantes": -504,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "ZKK338",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-10-30",
+     "dias": 17,
+     "kmRestantes": -88,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "YEX149",
+     "tarea": "Engrase general",
+     "fecha": "2026-11-02",
+     "dias": 20,
+     "kmRestantes": 751,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "SPC303",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-11-06",
+     "dias": 24,
+     "kmRestantes": -1576,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "TMA233",
+     "tarea": "Engrase general",
+     "fecha": "2026-11-08",
+     "dias": 26,
+     "kmRestantes": 972,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "MCF163",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-11-09",
+     "dias": 27,
+     "kmRestantes": -1536,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "VZV289",
+     "tarea": "Cambio de filtros",
+     "fecha": "2026-11-09",
+     "dias": 27,
+     "kmRestantes": -1959,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "VZV289",
+     "tarea": "Cambio de aceite motor",
+     "fecha": "2026-11-09",
+     "dias": 27,
+     "kmRestantes": -937,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "XZW107",
+     "tarea": "Alineación y balanceo",
+     "fecha": "2026-11-11",
+     "dias": 29,
+     "kmRestantes": -439,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "UAY247",
+     "tarea": "Engrase general",
+     "fecha": "2026-11-11",
+     "dias": 29,
+     "kmRestantes": -813,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    },
+    {
+     "vehiculo": "ZCY156",
+     "tarea": "Rotación de llantas",
+     "fecha": "2026-11-12",
+     "dias": 30,
+     "kmRestantes": -835,
+     "estado": "proxima",
+     "estadoTexto": "Programada"
+    }
+   ]
+  },
+  "novedadesPendientes": {
+   "total": 23,
+   "porPrioridad": [
+    {
+     "prioridad": "high",
+     "etiqueta": "Alta",
+     "cantidad": 1
+    },
+    {
+     "prioridad": "medium",
+     "etiqueta": "Media",
+     "cantidad": 7
+    },
+    {
+     "prioridad": "low",
+     "etiqueta": "Baja",
+     "cantidad": 14
+    },
+    {
+     "prioridad": "sin",
+     "etiqueta": "Sin prioridad",
+     "cantidad": 1
+    }
+   ]
+  }
+ },
+ "combustible": {
+  "galones": 49337.5,
+  "costo": 532976570,
+  "cargas": 932,
+  "porMes": [
+   {
+    "mes": "2026-04",
+    "galones": 4586.2,
+    "costo": 49397028
+   },
+   {
+    "mes": "2026-05",
+    "galones": 8327.6,
+    "costo": 90037434
+   },
+   {
+    "mes": "2026-06",
+    "galones": 8457.6,
+    "costo": 91661601
+   },
+   {
+    "mes": "2026-07",
+    "galones": 8503.8,
+    "costo": 91767152
+   },
+   {
+    "mes": "2026-08",
+    "galones": 8118.6,
+    "costo": 87758757
+   },
+   {
+    "mes": "2026-09",
+    "galones": 8040.3,
+    "costo": 86767076
+   },
+   {
+    "mes": "2026-10",
+    "galones": 3303.4,
+    "costo": 35587522
+   }
+  ],
+  "rendimientoPorTipo": [
+   {
+    "tipo": "Camión sencillo",
+    "real": 11,
+    "ideal": 11.5,
+    "cargas": 221
+   },
+   {
+    "tipo": "Camioneta",
+    "real": 31.5,
+    "ideal": 32,
+    "cargas": 178
+   },
+   {
+    "tipo": "Sin tipo",
+    "real": 32.3,
+    "ideal": 32,
+    "cargas": 22
+   },
+   {
+    "tipo": "Tractocamion",
+    "real": 6,
+    "ideal": 6.2,
+    "cargas": 334
+   },
+   {
+    "tipo": "Volqueta",
+    "real": 5.5,
+    "ideal": 5.4,
+    "cargas": 121
+   }
+  ],
+  "peoresRendimientos": [
+   {
+    "vehiculo": "YEH191",
+    "tipo": "Camión sencillo",
+    "cargas": 20,
+    "real": 7.9,
+    "ideal": 11.5,
+    "relacion": 68.3
+   },
+   {
+    "vehiculo": "VZU310",
+    "tipo": "Tractocamion",
+    "cargas": 40,
+    "real": 4.4,
+    "ideal": 6.2,
+    "relacion": 70.7
+   },
+   {
+    "vehiculo": "DYY114",
+    "tipo": "Camioneta",
+    "cargas": 21,
+    "real": 25.6,
+    "ideal": 32,
+    "relacion": 80.1
+   },
+   {
+    "vehiculo": "YEX149",
+    "tipo": "Camión sencillo",
+    "cargas": 18,
+    "real": 9.5,
+    "ideal": 11.5,
+    "relacion": 82.7
+   },
+   {
+    "vehiculo": "JLF198",
+    "tipo": "Tractocamion",
+    "cargas": 36,
+    "real": 5.6,
+    "ideal": 6.2,
+    "relacion": 89.5
+   },
+   {
+    "vehiculo": "VZV184",
+    "tipo": "Tractocamion",
+    "cargas": 37,
+    "real": 5.6,
+    "ideal": 6.2,
+    "relacion": 90.2
+   },
+   {
+    "vehiculo": "TMA233",
+    "tipo": "Camión sencillo",
+    "cargas": 21,
+    "real": 10.4,
+    "ideal": 11.5,
+    "relacion": 90.8
+   },
+   {
+    "vehiculo": "WWS128",
+    "tipo": "Tractocamion",
+    "cargas": 38,
+    "real": 5.7,
+    "ideal": 6.2,
+    "relacion": 91.8
+   },
+   {
+    "vehiculo": "SKJ282",
+    "tipo": "Volqueta",
+    "cargas": 19,
+    "real": 5,
+    "ideal": 5.4,
+    "relacion": 92.1
+   },
+   {
+    "vehiculo": "ZAP226",
+    "tipo": "Camión sencillo",
+    "cargas": 22,
+    "real": 10.7,
+    "ideal": 11.5,
+    "relacion": 93
+   }
+  ],
+  "minCargas": 3
+ },
+ "costos": {
+  "total": 898783660,
+  "mantenimiento": 365807090,
+  "combustible": 532976570,
+  "kmRecorridos": 410902,
+  "costoPorKm": 2187.3,
+  "porMes": [
+   {
+    "mes": "2026-04",
+    "mantenimiento": 25072127,
+    "combustible": 49397028,
+    "total": 74469155
+   },
+   {
+    "mes": "2026-05",
+    "mantenimiento": 72958859,
+    "combustible": 90037434,
+    "total": 162996293
+   },
+   {
+    "mes": "2026-06",
+    "mantenimiento": 58544640,
+    "combustible": 91661601,
+    "total": 150206241
+   },
+   {
+    "mes": "2026-07",
+    "mantenimiento": 57900368,
+    "combustible": 91767152,
+    "total": 149667520
+   },
+   {
+    "mes": "2026-08",
+    "mantenimiento": 57235614,
+    "combustible": 87758757,
+    "total": 144994371
+   },
+   {
+    "mes": "2026-09",
+    "mantenimiento": 69231516,
+    "combustible": 86767076,
+    "total": 155998592
+   },
+   {
+    "mes": "2026-10",
+    "mantenimiento": 24863966,
+    "combustible": 35587522,
+    "total": 60451488
+   }
+  ],
+  "porCentroCosto": [
+   {
+    "centro": "Inversiones",
+    "mantenimiento": 118554281,
+    "combustible": 153935632,
+    "total": 272489913
+   },
+   {
+    "centro": "Operación Costa",
+    "mantenimiento": 74107091,
+    "combustible": 134508557,
+    "total": 208615648
+   },
+   {
+    "centro": "Operación Antioquia",
+    "mantenimiento": 91173875,
+    "combustible": 110870631,
+    "total": 202044506
+   },
+   {
+    "centro": "Sin centro de costo",
+    "mantenimiento": 53635917,
+    "combustible": 93209232,
+    "total": 146845149
+   },
+   {
+    "centro": "Propios",
+    "mantenimiento": 28335926,
+    "combustible": 40452518,
+    "total": 68788444
+   }
+  ],
+  "porVehiculo": [
+   {
+    "vehiculo": "NRZ177",
+    "tipo": "Tractocamion",
+    "mantenimiento": 35188087,
+    "combustible": 26720570,
+    "total": 61908657,
+    "km": 13663,
+    "costoPorKm": 4531.1
+   },
+   {
+    "vehiculo": "WWS128",
+    "tipo": "Tractocamion",
+    "mantenimiento": 23596977,
+    "combustible": 27045228,
+    "total": 50642205,
+    "km": 14118,
+    "costoPorKm": 3587.1
+   },
+   {
+    "vehiculo": "CPF100",
+    "tipo": "Tractocamion",
+    "mantenimiento": 16611777,
+    "combustible": 29487299,
+    "total": 46099076,
+    "km": 17190,
+    "costoPorKm": 2681.7
+   },
+   {
+    "vehiculo": "VZV184",
+    "tipo": "Tractocamion",
+    "mantenimiento": 18727108,
+    "combustible": 27089500,
+    "total": 45816608,
+    "km": 13530,
+    "costoPorKm": 3386.3
+   },
+   {
+    "vehiculo": "YAF212",
+    "tipo": "Volqueta",
+    "mantenimiento": 24838947,
+    "combustible": 15704980,
+    "total": 40543927,
+    "km": 7636,
+    "costoPorKm": 5309.6
+   },
+   {
+    "vehiculo": "SXV170",
+    "tipo": "Tractocamion",
+    "mantenimiento": 13688351,
+    "combustible": 25721693,
+    "total": 39410044,
+    "km": 15093,
+    "costoPorKm": 2611.1
+   },
+   {
+    "vehiculo": "ZKK338",
+    "tipo": "Tractocamion",
+    "mantenimiento": 7705912,
+    "combustible": 29018183,
+    "total": 36724095,
+    "km": 15301,
+    "costoPorKm": 2400.1
+   },
+   {
+    "vehiculo": "JLF198",
+    "tipo": "Tractocamion",
+    "mantenimiento": 9406025,
+    "combustible": 27144155,
+    "total": 36550180,
+    "km": 12787,
+    "costoPorKm": 2858.4
+   },
+   {
+    "vehiculo": "VZU310",
+    "tipo": "Tractocamion",
+    "mantenimiento": 5492863,
+    "combustible": 27664329,
+    "total": 33157192,
+    "km": 11032,
+    "costoPorKm": 3005.5
+   },
+   {
+    "vehiculo": "KDV331",
+    "tipo": "Tractocamion",
+    "mantenimiento": 5047782,
+    "combustible": 28000950,
+    "total": 33048732,
+    "km": 15083,
+    "costoPorKm": 2191.1
+   }
+  ]
+ },
+ "peticiones": {
+  "total": 0,
+  "porEndpoint": {},
+  "esperaSeg": 0
+ }
+}
