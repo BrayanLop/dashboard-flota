@@ -113,10 +113,14 @@ export class ClienteCloudFleet {
       if (resp.status === 403) throw new ErrorCloudFleet("La API key no tiene permisos para consultar esta información en cloudFleet", { estado: 502 });
       if (!resp.ok) {
         let detalle = "";
+        let mensaje = "";
         try {
           const cuerpo = await resp.json();
-          detalle = cuerpo?.error?.message ? `: ${String(cuerpo.error.message).slice(0, 200)}` : "";
+          mensaje = String(cuerpo?.error?.message ?? cuerpo?.message ?? "");
+          detalle = mensaje ? `: ${mensaje.slice(0, 200)}` : "";
         } catch {}
+        // cloudFleet responde 404 "No ... found with the specified filters" cuando no hay resultados.
+        if (resp.status === 404 && /no .*found/i.test(mensaje)) return { datos: [], siguiente: null };
         throw new ErrorCloudFleet(`Error de cloudFleet en ${etiqueta} (HTTP ${resp.status})${detalle}`, { estado: 502 });
       }
 

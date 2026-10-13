@@ -60,6 +60,17 @@ async function guardarCache(env, meses, resumen) {
 /** Fecha ISO8601 (UTC) para los filtros de cloudFleet. */
 const iso = (ms) => new Date(ms).toISOString().replace(/\.\d{3}Z$/, "Z");
 
+/** Divide [desde, hasta] en tramos de máximo 180 días (límite de cloudFleet en work-orders y fuel-entries). */
+function tramos(desde, hasta, maxDias = 180) {
+  const res = [];
+  for (let ini = desde; ini <= hasta; ) {
+    const fin = Math.min(hasta, ini + maxDias * DIA_MS - 1000);
+    res.push([ini, fin]);
+    ini = fin + 1000;
+  }
+  return res;
+}
+
 /**
  * Descarga de cloudFleet todo lo necesario, en orden de prioridad y de forma secuencial.
  * Peticiones mínimas por refresco: 7 (8 si meses < 6). Ver README para la estimación.
@@ -82,13 +93,16 @@ async function descargarDatos(env, meses, ahora) {
     ["novedades", "issues/", {}], // por defecto la API devuelve solo las pendientes (includeDone=false)
     // Documentos vigentes que vencen hasta dentro de 30 días (fechas sin hora, según la API).
     ["documentos", "vehicles/documents", { isCurrent: "true", validToStart: "2000-01-01", validToEnd: claveDia(ahora + DIAS_ALERTA * DIA_MS) }],
-    ["ordenes", "work-orders/", { startDateFrom: iso(desde), startDateTo: iso(hasta) }],
+    ...tramos(desde, hasta).map(([a, b]) => ["ordenes", "work-orders/", { startDateFrom: iso(a), startDateTo: iso(b) }]),
+    // cloudFleet solo acepta un estado por consulta.
     ...(meses < 6
-      ? [["ordenesAbiertasExtra", "work-orders/", { status: "opened,onTechnicalCompletion", startDateFrom: iso(hace6Meses), startDateTo: iso(desde) }]]
+      ? tramos(hace6Meses, desde - 1000).flatMap(([a, b]) =>
+          ["opened", "onTechnicalCompletion"].map((status) => ["ordenesAbiertasExtra", "work-orders/", { status, startDateFrom: iso(a), startDateTo: iso(b) }]),
+        )
       : []),
     ["programaciones", "maintenance-schedules/", { dateToExecuteFrom: iso(progDesde), dateToExecuteTo: iso(progHasta) }],
     // Filtro por fecha de tanqueo (startDate*), no por fecha de creación del registro.
-    ["combustible", "fuel-entries", { startDateFrom: iso(desde), startDateTo: iso(hasta) }],
+    ...tramos(desde, hasta).map(([a, b]) => ["combustible", "fuel-entries", { startDateFrom: iso(a), startDateTo: iso(b) }]),
   ];
 
   const datos = {};
@@ -98,12 +112,13 @@ async function descargarDatos(env, meses, ahora) {
 
   for (const [clave, ruta, params] of tareas) {
     if (detenido) {
-      datos[clave] = [];
+      datos[clave] ??= [];
       continue;
     }
     try {
       const r = await cliente.listar(ruta, params, clave);
-      datos[clave] = r.items;
+      // Una misma clave puede consultarse en varios tramos: se acumula.
+      datos[clave] = [...(datos[clave] ?? []), ...r.items];
       if (r.truncado) {
         parcial = true;
         if (r.error) {
@@ -114,7 +129,7 @@ async function descargarDatos(env, meses, ahora) {
       }
     } catch (e) {
       if (e instanceof ErrorCloudFleet && e.recuperable) {
-        datos[clave] = [];
+        datos[clave] ??= [];
         detenido = e;
         parcial = true;
       } else {
